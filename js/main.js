@@ -219,9 +219,9 @@
       ["  final ", "k"], ["based", ""], [" = ", ""], ["'Pangasinan, PH'", "s"], [";\n\n", ""],
       ["  final ", "k"], ["stack", ""], [" = [\n", ""],
       ["    'Flutter'", "s"], [", ", ""], ["'Dart'", "s"], [", ", ""], ["'Supabase'", "s"], [",\n", ""],
-      ["    'PostgreSQL'", "s"], [", ", ""], ["'Firebase'", "s"], [", ", ""], ["'Vercel'", "s"], [",\n", ""],
+      ["    'PostgreSQL'", "s"], [", ", ""], ["'React'", "s"], [", ", ""], ["'TypeScript'", "s"], [",\n", ""],
       ["  ];\n\n", ""],
-      ["  final ", "k"], ["shipped", ""], [" = [", ""], ["'I-Judge'", "s"], ["]; ", ""], ["// 4.60/5\n", "c"],
+      ["  final ", "k"], ["shipped", ""], [" = [", ""], ["'I-Judge'", "s"], [", ", ""], ["'Kuryente Tracker'", "s"], ["];\n", ""],
       ["  bool get ", "k"], ["openToRemote", "f"], [" => ", ""], ["true", "n"], [";\n", ""],
       ["}", ""],
     ];
