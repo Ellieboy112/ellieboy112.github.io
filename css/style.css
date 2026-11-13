@@ -542,7 +542,7 @@ main { position: relative; }
 }
 .card-hover svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .pcard:hover .card-hover { opacity: 1; transform: none; }
-.card-body { position: relative; z-index: 1; padding: 22px; display: flex; flex-direction: column; gap: 6px; flex: 1; pointer-events: none; }
+.card-body { position: relative; padding: 22px; display: flex; flex-direction: column; gap: 6px; flex: 1; pointer-events: none; }
 .card-body .tags { margin-top: auto; padding-top: 12px; }
 .card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: .72rem; color: var(--dim); margin-bottom: 6px; }
 .badge { display: inline-flex; align-items: center; gap: 7px; padding: 3px 9px; border-radius: 999px; font-weight: 700; letter-spacing: .03em; }
