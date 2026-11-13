@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I-Judge Case Study | Ellison Olivo</title>
+  <meta name="description" content="Case study: I-Judge, a real-time judging and tabulation app built by Ellison Olivo with Flutter, Supabase and Vercel. Rated 4.60/5 under ISO/IEC 25010." />
+  <meta name="author" content="Ellison Olivo" />
+  <meta name="theme-color" content="#07080c" />
+
+  <!-- Social share preview (LinkedIn, Messenger, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="I-Judge Case Study | Ellison Olivo" />
+  <meta property="og:description" content="Flutter & Supabase developer building real-time web and mobile apps. See my projects. Open to remote work." />
+  <meta property="og:image" content="https://ellieboy112.github.io/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="../index.html" class="nav-logo" aria-label="Ellison Olivo, home">
+      <span class="logo-bracket">&lt;</span>EO<span class="logo-bracket">/&gt;</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="../index.html#projects"><span class="num">←</span>All projects</a>
+      <a href="#gallery"><span class="num">01.</span>Screens</a>
+      <a href="#demo"><span class="num">02.</span>Demo</a>
+      <a href="#features"><span class="num">03.</span>Features</a>
+      <a href="#evaluation"><span class="num">04.</span>Results</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="kbd-btn" id="open-palette" aria-label="Open command menu"><kbd>Ctrl</kbd><kbd>K</kbd></button>
+      <a class="btn btn-outline btn-sm" href="../assets/Ellison_Olivo_Resume.pdf" download>Resume</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section case-hero" id="project">
+      <a href="../index.html#projects" class="back-link mono reveal">← back to all projects</a>
+      <article class="project">
+        <div class="project-top reveal">
+          <div class="project-mark" aria-hidden="true">
+            <svg viewBox="0 0 100 100" class="podium-mark">
+              <rect class="pm-2" x="8" y="50" width="24" height="42" rx="6"/>
+              <rect class="pm-1" x="38" y="34" width="24" height="58" rx="6"/>
+              <rect class="pm-3" x="68" y="62" width="24" height="30" rx="6"/>
+              <circle class="pm-dot" cx="50" cy="16" r="9"/>
+            </svg>
+          </div>
+          <div class="project-intro">
+            <p class="eyebrow mono">Capstone project · Defended Nov 2026 · <span class="accent">My role: Developer</span></p>
+            <h3 class="project-title">I-Judge</h3>
+            <p class="project-sub">Digital Tabulation Application of Pangasinan State University – Alaminos City Campus</p>
+            <p class="project-desc">
+              A real-time judging and tabulation platform for pageants and competitions. Admins set up
+              multi-stage events with weighted criteria, judges score on their phones, rankings update
+              live per category, ties go to the Board's Chairperson, and results are revealed on a
+              projector and printed as a signed official document.
+            </p>
+            <ul class="tags">
+              <li>Flutter Web</li><li>Dart</li><li>Supabase</li><li>PostgreSQL + RLS</li>
+              <li>Realtime</li><li>Vercel CI/CD</li><li>PDF generation</li><li>QR sign-in</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn btn-primary btn-sm magnetic" href="https://i-judge-psu.vercel.app" target="_blank" rel="noopener">
+                Open live app
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-sm" href="#demo">Try the demo</a>
+            </div>
+          </div>
+        </div>
+
+<!-- Problem / Solution -->
+        <div class="ps-grid reveal">
+          <div class="ps-card">
+            <span class="ps-label mono">// the problem</span>
+            <p>Campus events were tabulated by hand. Paper scoresheets, manual computation, and re-checking meant slow results, errors, and disputes that were hard to settle.</p>
+          </div>
+          <div class="ps-arrow" aria-hidden="true">→</div>
+          <div class="ps-card ps-solution">
+            <span class="ps-label mono">// the solution</span>
+            <p>Judges sign in with a QR code and PIN and score per criterion. The database checks every rule, computes weighted totals, ranks candidates live, and prints results only after every judge verifies.</p>
+          </div>
+        </div>
+
+        <!-- Screenshot gallery -->
+        <div class="gallery reveal" id="gallery">
+          <div class="gallery-head">
+            <div>
+              <p class="eyebrow mono">Inside the app</p>
+              <h4>Real screens from I-Judge</h4>
+            </div>
+            <div class="tabs" role="tablist" aria-label="Screens">
+              <button role="tab" class="tab active" aria-selected="true" data-tab="admin">Admin</button>
+              <button role="tab" class="tab" aria-selected="false" data-tab="judge">Judge (mobile)</button>
+              <button role="tab" class="tab" aria-selected="false" data-tab="results">Live &amp; results</button>
+            </div>
+          </div>
+
+          <div class="tab-panel active" data-panel="admin">
+            <div class="browser">
+              <div class="browser-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url mono">i-judge-psu.vercel.app</span></div>
+              <img class="browser-shot" id="admin-main" src="../assets/screens/admin-dashboard.webp" alt="I-Judge admin dashboard showing live events" width="772" height="483" loading="lazy" />
+            </div>
+            <div class="thumbs" data-target="admin-main">
+              <button class="thumb active" data-src="../assets/screens/admin-dashboard.webp" data-alt="Admin dashboard with live events" data-cap="Admin dashboard: live events and judge progress at a glance"><img src="../assets/screens/admin-dashboard.webp" alt="" loading="lazy"/></button>
+              <button class="thumb" data-src="../assets/screens/criteria.webp" data-alt="Stages and weighted criteria editor" data-cap="Stages &amp; criteria: weights must total exactly 100%"><img src="../assets/screens/criteria.webp" alt="" loading="lazy"/></button>
+              <button class="thumb" data-src="../assets/screens/candidates.webp" data-alt="Candidate management" data-cap="Candidates with photos, numbers, categories and colleges"><img src="../assets/screens/candidates.webp" alt="" loading="lazy"/></button>
+              <button class="thumb" data-src="../assets/screens/judge-qr.webp" data-alt="Personal judge QR code and PIN" data-cap="Personal judge QR code + PIN: no judge accounts needed"><img src="../assets/screens/judge-qr.webp" alt="" loading="lazy"/></button>
+              <button class="thumb" data-src="../assets/screens/super-admin.webp" data-alt="Super Admin system overview" data-cap="Super Admin: organizations, admin accounts and activity log"><img src="../assets/screens/super-admin.webp" alt="" loading="lazy"/></button>
+            </div>
+            <p class="shot-cap mono" id="admin-main-cap">Admin dashboard: live events and judge progress at a glance</p>
+          </div>
+
+          <div class="tab-panel" data-panel="judge" hidden>
+            <div class="phones">
+              <figure class="phone"><div class="phone-frame"><img src="../assets/screens/phone-scoring.webp" alt="Judge scoring a candidate on a phone" width="436" height="866" loading="lazy"/></div><figcaption>One candidate at a time, per-criterion scoring</figcaption></figure>
+              <figure class="phone phone-mid"><div class="phone-frame"><img src="../assets/screens/phone-offline.webp" alt="Offline mode keeping scores on the phone" width="436" height="866" loading="lazy"/></div><figcaption>No signal? Scores are queued and synced later</figcaption></figure>
+              <figure class="phone"><div class="phone-frame"><img src="../assets/screens/phone-verify.webp" alt="Judge electronically verifying final scores" width="436" height="866" loading="lazy"/></div><figcaption>Electronic verification of final scores</figcaption></figure>
+              <figure class="phone"><div class="phone-frame"><img src="../assets/screens/phone-tiebreak.webp" alt="Chairperson breaking a tie" width="436" height="866" loading="lazy"/></div><figcaption>The Chairperson breaks ties at the cutoff</figcaption></figure>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="results" hidden>
+            <div class="browser">
+              <div class="browser-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url mono">i-judge-psu.vercel.app/projector</span></div>
+              <img class="browser-shot" id="results-main" src="../assets/screens/projector.webp" alt="Projector mode revealing the podium winners" width="772" height="483" loading="lazy" />
+            </div>
+            <div class="thumbs" data-target="results-main">
+              <button class="thumb active" data-src="../assets/screens/projector.webp" data-alt="Projector mode podium reveal" data-cap="Projector mode: 3rd, 2nd, 1st place reveal for the audience"><img src="../assets/screens/projector.webp" alt="" loading="lazy"/></button>
+              <button class="thumb" data-src="../assets/screens/live-scoring.webp" data-alt="Live scoring panel" data-cap="Live scoring: judges submitted/verified, ties sent to the Chairperson"><img src="../assets/screens/live-scoring.webp" alt="" loading="lazy"/></button>
+              <button class="thumb" data-src="../assets/screens/live-rankings.webp" data-alt="Live rankings with cutoff" data-cap="Live rankings per category with the advancement cutoff"><img src="../assets/screens/live-rankings.webp" alt="" loading="lazy"/></button>
+              <button class="thumb" data-src="../assets/screens/close-stage.webp" data-alt="Close stage and tie resolution" data-cap="Close Stage: top-N advance, decided ties recorded"><img src="../assets/screens/close-stage.webp" alt="" loading="lazy"/></button>
+              <button class="thumb" data-src="../assets/screens/login.webp" data-alt="Login page" data-cap="Sign-in: judges use name + event code + PIN, staff use email"><img src="../assets/screens/login.webp" alt="" loading="lazy"/></button>
+            </div>
+            <p class="shot-cap mono" id="results-main-cap">Projector mode: 3rd, 2nd, 1st place reveal for the audience</p>
+          </div>
+        </div>
+
+        <!-- Interactive demo -->
+        <div class="demo reveal" id="demo">
+          <div class="demo-head">
+            <div>
+              <p class="eyebrow mono">Interactive demo · sample data</p>
+              <h4>Run a mini event</h4>
+              <p class="demo-note">A simplified simulation of I-Judge's live flow: score, verify, then reveal the podium.</p>
+            </div>
+            <div class="demo-controls">
+              <button class="btn btn-primary btn-sm" id="demo-score"><span class="step-n">1</span> Score a round</button>
+              <button class="btn btn-outline btn-sm" id="demo-verify" disabled><span class="step-n">2</span> Verify</button>
+              <button class="btn btn-outline btn-sm" id="demo-reveal" disabled><span class="step-n">3</span> Reveal</button>
+              <button class="btn btn-ghost btn-sm" id="demo-reset" aria-label="Reset demo">↺</button>
+            </div>
+          </div>
+
+          <div class="demo-body">
+            <div class="demo-board">
+              <div class="board-head mono">
+                <span>RANK</span><span>CANDIDATE</span><span>COLLEGE</span><span class="r">SCORE</span>
+              </div>
+              <ol class="board" id="board" aria-live="polite"></ol>
+
+              <div class="podium-stage" id="podium" hidden>
+                <p class="podium-title mono">OFFICIAL · ALL JUDGES VERIFIED</p>
+                <div class="podium">
+                  <div class="pod pod-2"><div class="pod-card" data-place="2">?</div><div class="pod-step">2nd</div></div>
+                  <div class="pod pod-1"><div class="pod-card" data-place="1">?</div><div class="pod-step">1st</div></div>
+                  <div class="pod pod-3"><div class="pod-card" data-place="3">?</div><div class="pod-step">3rd</div></div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="demo-side">
+              <div class="judges">
+                <p class="side-title mono">JUDGE PANEL</p>
+                <ul id="judges"></ul>
+              </div>
+              <div class="demo-log">
+                <p class="side-title mono">ACTIVITY LOG</p>
+                <ul id="log" class="mono"></ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="flow reveal">
+          <p class="eyebrow mono">How an event runs</p>
+          <ol class="flow-steps">
+            <li><span class="flow-n mono">01</span><strong>Set up</strong><span>Admin creates stages, weighted criteria, categories, candidates and the judge list</span></li>
+            <li><span class="flow-n mono">02</span><strong>Judges join</strong><span>Scan a QR code or type the event code, name and 4-digit PIN</span></li>
+            <li><span class="flow-n mono">03</span><strong>Score</strong><span>Per criterion and per candidate, saved even with no signal</span></li>
+            <li><span class="flow-n mono">04</span><strong>Rank &amp; resolve</strong><span>Live rankings per category; the Chairperson decides ties</span></li>
+            <li><span class="flow-n mono">05</span><strong>Verify</strong><span>Every judge electronically confirms their final scores</span></li>
+            <li><span class="flow-n mono">06</span><strong>Reveal &amp; print</strong><span>Projector podium reveal and a signed official PDF</span></li>
+          </ol>
+        </div>
+
+        <!-- Features -->
+        <div class="features" id="features">
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg></div>
+            <h5>QR + PIN judge sign-in</h5>
+            <p>No judge accounts. Each judge gets a personal QR code and 4-digit PIN, with attempt limits and a sign-in lock so nobody else can take a judge's seat.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 15l4-4 3 3 5-6"/></svg></div>
+            <h5>Multi-stage scoring</h5>
+            <p>Preliminary to Final stages, each with its own weighted criteria, top-N advancement per category, and optional carry-over of earlier scores.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8 15.5a6 6 0 0 1 8 0M12 19h.01"/><path d="M3 3l18 18"/></svg></div>
+            <h5>Offline-safe scoring</h5>
+            <p>If the signal drops, scores are queued on the phone and re-sent every few seconds. Sends are idempotent, so retries never create duplicates.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg></div>
+            <h5>Real-time live rankings</h5>
+            <p>Supabase Realtime streams every saved score to the admin's live scoring screen and the projector, ranked per category with the cutoff line.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7h6zM17 7l-3 7h6z"/></svg></div>
+            <h5>Chairperson tie-breaks</h5>
+            <p>Ties that matter, at a cutoff or for a podium place, are detected automatically and sent to the Chairperson's phone. The decision is recorded on the printout.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+            <h5>Projector mode</h5>
+            <p>A big-screen results view that reveals 3rd, 2nd, then 1st place for the audience, plus special awards such as "Best in Stage Presence".</p>
+          </div>
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M7 4h7l4 4v12H7z"/><path d="M14 4v4h4M10 13h5M10 17h5"/></svg></div>
+            <h5>Official results PDF</h5>
+            <p>Every stage, ranking, tie-break record and special award, followed by a certification and signature lines for each judge and signatory.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h5>Database-level security</h5>
+            <p>PostgreSQL row-level security and server-side functions enforce the competition rules, so the rules can't be bypassed from the browser.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="f-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><path d="M4 20L20 4"/></svg></div>
+            <h5>Blind judging &amp; more</h5>
+            <p>Optional blind judging, judge panels per stage, flexible event types, special awards, and multi-organization admin with an activity log.</p>
+          </div>
+        </div>
+
+        <!-- Architecture + Evaluation -->
+        <div class="arch-eval" id="evaluation">
+          <div class="arch reveal">
+            <p class="eyebrow mono">Architecture</p>
+            <h4>How it's built</h4>
+            <div class="arch-diagram">
+              <div class="arch-row">
+                <div class="node"><span class="node-k mono">CLIENT</span><strong>Flutter Web app</strong><span>Admin · Judge · Projector</span></div>
+              </div>
+              <div class="arch-link mono"><span>Auth · RPC · Realtime</span></div>
+              <div class="arch-row">
+                <div class="node node-accent"><span class="node-k mono">BACKEND</span><strong>Supabase</strong><span>PostgreSQL + RLS · Auth · Realtime · SQL functions</span></div>
+              </div>
+              <div class="arch-link mono"><span>git push → build → deploy</span></div>
+              <div class="arch-row arch-two">
+                <div class="node"><span class="node-k mono">CODE</span><strong>GitHub</strong><span>13 SQL migrations</span></div>
+                <div class="node"><span class="node-k mono">HOSTING</span><strong>Vercel</strong><span>Auto-deploy on push</span></div>
+              </div>
+            </div>
+            <p class="arch-note">Developed with the SDLC Rapid Application Development (RAD) model. Started on Firebase, then migrated to Supabase for relational data and stronger server-side rules.</p>
+          </div>
+
+          <div class="eval reveal">
+            <p class="eyebrow mono">Evaluation · ISO/IEC 25010</p>
+            <h4>Rated <span class="grad-text">4.60 / 5</span>, "Very High"</h4>
+            <p class="eval-note">Acceptability survey of 50 evaluators: IT instructors, student tabulators, LGU executives, and students.</p>
+            <ul class="bars" id="bars">
+              <li><span class="bar-label">Functional suitability</span><span class="bar"><span style="--v:4.64"></span></span><span class="bar-val mono">4.64</span></li>
+              <li><span class="bar-label">Maintainability &amp; portability</span><span class="bar"><span style="--v:4.64"></span></span><span class="bar-val mono">4.64</span></li>
+              <li><span class="bar-label">Performance efficiency</span><span class="bar"><span style="--v:4.61"></span></span><span class="bar-val mono">4.61</span></li>
+              <li><span class="bar-label">Usability</span><span class="bar"><span style="--v:4.60"></span></span><span class="bar-val mono">4.60</span></li>
+              <li><span class="bar-label">Security</span><span class="bar"><span style="--v:4.58"></span></span><span class="bar-val mono">4.58</span></li>
+              <li><span class="bar-label">Reliability</span><span class="bar"><span style="--v:4.56"></span></span><span class="bar-val mono">4.56</span></li>
+            </ul>
+            <p class="bar-scale mono"><span>1</span><span>5-point Likert scale</span><span>5</span></p>
+            <div class="eval-foot"><div><strong>50</strong><span>evaluators</span></div><div><strong>6</strong><span>quality characteristics</span></div><div><strong>4.60</strong><span>overall mean</span></div></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section contact case-cta">
+      <h2 class="contact-title reveal">Like what you see?</h2>
+      <p class="contact-sub reveal">I'm open to remote roles in Flutter, mobile, and web development.</p>
+      <div class="contact-ctas reveal">
+        <a href="mailto:ellisonolivo5@gmail.com?subject=Opportunity%20for%20Ellison%20Olivo" class="btn btn-primary btn-lg magnetic">Get in touch</a>
+        <a href="../index.html#projects" class="btn btn-ghost btn-lg magnetic">See other projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <p>Designed &amp; built by Ellison Olivo · <span id="year">2026</span></p>
+    <p class="muted">Press <kbd>Ctrl</kbd> <kbd>K</kbd> to navigate</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" aria-label="Close">✕</button>
+    <img id="lb-img" alt="" />
+  </div>
+  <div class="palette" id="palette" hidden>
+    <div class="palette-backdrop" data-close></div>
+    <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command menu">
+      <div class="palette-input-row">
+        <span class="mono accent">&gt;</span>
+        <input id="palette-input" type="text" placeholder="Type a command or search..." autocomplete="off" aria-label="Search commands" />
+        <kbd>Esc</kbd>
+      </div>
+      <ul id="palette-list" role="listbox"></ul>
+    </div>
+  </div>
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

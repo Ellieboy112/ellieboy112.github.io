@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ellison Olivo | Flutter & Web Developer</title>
+  <meta name="description" content="Portfolio of Ellison Olivo, a Flutter, Supabase and Firebase developer building real-time web and mobile apps. Open to remote work." />
+  <meta name="author" content="Ellison Olivo" />
+  <meta name="theme-color" content="#07080c" />
+
+  <!-- Social share preview (LinkedIn, Messenger, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ellison Olivo | Flutter & Web Developer" />
+  <meta property="og:description" content="Flutter & Supabase developer building real-time web and mobile apps. See my projects. Open to remote work." />
+  <meta property="og:image" content="https://ellieboy112.github.io/assets/og-image.png" /><!-- change if your site URL is different -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Background layers -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav-logo" aria-label="Ellison Olivo, back to top">
+      <span class="logo-bracket">&lt;</span>EO<span class="logo-bracket">/&gt;</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="#about"><span class="num">01.</span>About</a>
+      <a href="#projects"><span class="num">02.</span>Projects</a>
+      <a href="#skills"><span class="num">03.</span>Skills</a>
+      <a href="#experience"><span class="num">04.</span>Experience</a>
+      <a href="#contact"><span class="num">05.</span>Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="kbd-btn" id="open-palette" aria-label="Open command menu">
+        <kbd>Ctrl</kbd><kbd>K</kbd>
+      </button>
+      <a class="btn btn-outline btn-sm" href="assets/Ellison_Olivo_Resume.pdf" download>Resume</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-text">
+        <div class="status-pill reveal">
+          <span class="pulse-dot"></span> Open to remote work
+        </div>
+        <p class="hero-hello reveal mono">// hello world, I'm</p>
+        <h1 class="hero-name reveal">
+          <span class="glitch" data-text="Ellison Olivo">Ellison Olivo</span>
+        </h1>
+        <h2 class="hero-role reveal">
+          <span class="mono accent">&gt;</span>
+          <span id="typed" class="typed">Flutter Developer</span><span class="caret" aria-hidden="true">_</span>
+        </h2>
+        <p class="hero-bio reveal">
+          I'm a developer who builds fast, reliable apps for the web and mobile with
+          <strong>Flutter</strong>, <strong>Supabase</strong>, and <strong>Firebase</strong>.
+          I care about clean architecture, real-time experiences, and interfaces people can pick up
+          without a manual. My latest project, <strong>I-Judge</strong>, is live in production and
+          was rated <strong class="accent">4.60 / 5</strong> by its evaluators.
+        </p>
+        <div class="hero-ctas reveal">
+          <a href="#projects" class="btn btn-primary magnetic">
+            View my projects
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="assets/Ellison_Olivo_Resume.pdf" class="btn btn-ghost magnetic" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- Code window: a Dart class describing Ellison -->
+      <div class="hero-visual reveal">
+        <div class="code-window tilt">
+          <div class="code-head">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="code-file mono">lib/developer.dart</span>
+          </div>
+          <pre class="code-body mono" aria-label="A Dart class describing Ellison Olivo"><code id="code-typed"></code><span class="caret code-caret" aria-hidden="true">▍</span></pre>
+          <div class="code-foot mono">
+            <span><span class="live-dot"></span> status: available for work</span>
+            <span>Dart · Flutter</span>
+          </div>
+        </div>
+        <div class="float-chip chip-1 mono">✓ build passed</div>
+        <div class="float-chip chip-2 mono">🚀 deployed to production</div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll to About">
+        <span class="mouse"><span class="wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <span class="section-num mono">01.</span>
+        <h2>About me</h2>
+        <span class="section-line"></span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a graduating <strong>BS Information Technology</strong> student at
+            <strong>Pangasinan State University – Alaminos City Campus</strong>, based in Bani, Pangasinan.
+            I started in hardware as a Computer System Servicing NC II holder, and now I build software:
+            I like turning slow, error-prone manual work into fast, reliable apps.
+          </p>
+          <p>
+            I work across the whole stack: Flutter interfaces, PostgreSQL databases with row-level
+            security, real-time data, automated tests, and CI/CD deployments. I enjoy taking a project
+            from a rough idea to something real people use.
+          </p>
+          <p>
+            Most recently I was the developer on our four-person capstone team, where I built
+            <strong>I-Judge</strong>, a live judging and tabulation platform that replaced paper
+            scoresheets at university events. I'm looking for a <span class="accent">remote</span>
+            role where I can keep shipping production apps, learn from experienced engineers, and grow.
+          </p>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat-card">
+            <span class="stat-num" data-count="4.60" data-decimals="2">0</span>
+            <span class="stat-label">rating for I-Judge from 50 evaluators (ISO/IEC 25010)</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-count="1">0</span>
+            <span class="stat-label">production app shipped and live, with more on the way</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-count="25" data-suffix="K+">0</span>
+            <span class="stat-label">lines of Dart written</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-count="20" data-suffix="+">0</span>
+            <span class="stat-label">automated test suites</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="section-head reveal">
+        <span class="section-num mono">02.</span>
+        <h2>Projects</h2>
+        <span class="section-line"></span>
+      </div>
+      <p class="section-sub reveal">Things I've built and shipped. Click a card to open the live app.</p>
+
+      <!-- Cards are generated from js/projects.js -->
+      <div class="project-grid" id="project-grid"></div>
+      <noscript><p><a href="https://i-judge-psu.vercel.app">I-Judge (live app)</a> · <a href="projects/i-judge.html">I-Judge case study</a></p></noscript>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="section-head reveal">
+        <span class="section-num mono">03.</span>
+        <h2>Skills &amp; tech stack</h2>
+        <span class="section-line"></span>
+      </div>
+      <p class="section-sub reveal">The tools and practices I use to build and ship my projects.</p>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h4><span class="mono accent">01</span> Frontend &amp; Mobile</h4>
+          <ul class="chips">
+            <li>Flutter (Web &amp; Android)</li><li>Dart</li><li>Material 3</li><li>Provider</li>
+            <li>Responsive UI</li><li>Design systems</li><li>Dark / light themes</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h4><span class="mono accent">02</span> Backend &amp; Data</h4>
+          <ul class="chips">
+            <li>Supabase</li><li>PostgreSQL</li><li>SQL &amp; migrations</li><li>Row-level security</li>
+            <li>Realtime subscriptions</li><li>Firebase (Auth, Firestore, Storage)</li><li>REST / RPC</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h4><span class="mono accent">03</span> Engineering</h4>
+          <ul class="chips">
+            <li>Offline-first sync</li><li>Role-based access control</li><li>PDF generation</li>
+            <li>QR codes &amp; scanning</li><li>Automated testing</li><li>Backend migration</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h4><span class="mono accent">04</span> DevOps &amp; Tools</h4>
+          <ul class="chips">
+            <li>Git &amp; GitHub</li><li>Vercel CI/CD</li><li>VS Code</li><li>Android Studio</li>
+            <li>flutter_test</li><li>Node.js (PGlite tests)</li><li>Canva &amp; Photoshop</li>
+            <li>Computer servicing (NC II)</li>
+          </ul>
+        </div>
+        <div class="skill-group skill-wide reveal">
+          <h4><span class="mono accent">05</span> Process &amp; Soft skills</h4>
+          <ul class="chips">
+            <li>SDLC / Rapid Application Development</li><li>Requirements gathering</li><li>ISO/IEC 25010 evaluation</li>
+            <li>Technical documentation</li><li>Teamwork &amp; collaboration</li><li>Problem solving</li>
+            <li>Communication</li><li>Time management</li><li>Adaptability</li><li>English &amp; Tagalog</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track mono">
+          <span>Flutter</span><span>✦</span><span>Dart</span><span>✦</span><span>Supabase</span><span>✦</span><span>PostgreSQL</span><span>✦</span><span>Realtime</span><span>✦</span><span>Vercel</span><span>✦</span><span>Firebase</span><span>✦</span><span>Offline-first</span><span>✦</span>
+          <span>Flutter</span><span>✦</span><span>Dart</span><span>✦</span><span>Supabase</span><span>✦</span><span>PostgreSQL</span><span>✦</span><span>Realtime</span><span>✦</span><span>Vercel</span><span>✦</span><span>Firebase</span><span>✦</span><span>Offline-first</span><span>✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="section-head reveal">
+        <span class="section-num mono">04.</span>
+        <h2>Experience &amp; education</h2>
+        <span class="section-line"></span>
+      </div>
+
+      <ol class="timeline">
+        <li class="tl-item reveal">
+          <span class="tl-dot tl-dot-next"></span>
+          <p class="tl-date mono">Jan 2027 · upcoming</p>
+          <h4>On-the-Job Training</h4>
+          <p class="tl-org">Required internship for the BS Information Technology program</p>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <p class="tl-date mono">2026 · Capstone</p>
+          <h4>Developer · I-Judge: Digital Tabulation Application</h4>
+          <p class="tl-org">Pangasinan State University – Alaminos City Campus · Team of four</p>
+          <ul>
+            <li>Designed, built, and deployed a Flutter web app that replaces paper-based tabulation for campus pageants and competitions, from the first prototype to the live release.</li>
+            <li>Migrated the backend from Firebase to Supabase (PostgreSQL), and wrote 13 SQL migrations with row-level security and server-side functions that enforce the scoring rules.</li>
+            <li>Built offline-first scoring with an idempotent sync queue, so judges never lose scores on weak venue Wi-Fi.</li>
+            <li>Built real-time live rankings, multi-stage advancement, chairperson tie-breaks, a projector reveal mode, and a signed official results PDF.</li>
+            <li>Set up CI/CD with GitHub and Vercel, and wrote 20+ automated test suites for the app logic and the database security policies.</li>
+            <li>Rated 4.60/5 ("Very High") by 50 evaluators under ISO/IEC 25010, and successfully defended before the panel in November 2026.</li>
+          </ul>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <p class="tl-date mono">2023 – present</p>
+          <h4>School Projects &amp; Academic Development</h4>
+          <p class="tl-org">Pangasinan State University – Alaminos City Campus</p>
+          <ul>
+            <li>Built academic IT projects and web systems, working with classmates on system design, documentation, and final outputs.</li>
+          </ul>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <p class="tl-date mono">2021 – 2022</p>
+          <h4>Work Immersion Trainee · CPETIT Department</h4>
+          <p class="tl-org">Pangasinan Electric Cooperative I (PANELCO I)</p>
+          <ul>
+            <li>Assisted with troubleshooting, system maintenance, and hardware and software installations.</li>
+            <li>Gained hands-on experience in computer servicing and technical support in a real workplace.</li>
+          </ul>
+          <ul class="tl-badges"><li>🏅 Best in Work Immersion</li></ul>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-dot tl-dot-edu"></span>
+          <p class="tl-date mono">Education</p>
+          <h4>Bachelor of Science in Information Technology</h4>
+          <p class="tl-org">Pangasinan State University – Alaminos City Campus · Expected graduation 2027</p>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-dot tl-dot-edu"></span>
+          <p class="tl-date mono">Senior High School</p>
+          <h4>Computer System Servicing (CSS) · Graduated with Honors</h4>
+          <p class="tl-org">Alaminos City National High School</p>
+          <ul class="tl-badges"><li>✓ NC II Passer: Computer System Servicing</li><li>🏅 Best in CSS</li></ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <p class="section-num mono reveal">05. What's next?</p>
+      <h2 class="contact-title reveal">Let's build something <span class="grad-text">great</span>.</h2>
+      <p class="contact-sub reveal">
+        I'm open to remote roles in Flutter, mobile, and web development. If you have a role, a
+        project, or a question, my inbox is open.
+      </p>
+
+      <div class="email-box reveal">
+        <span class="mono email" id="email-text">ellisonolivo5@gmail.com</span>
+        <button class="copy-btn" id="copy-email" aria-label="Copy email address">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <div class="contact-ctas reveal">
+        <a href="mailto:ellisonolivo5@gmail.com?subject=Opportunity%20for%20Ellison%20Olivo" class="btn btn-primary btn-lg magnetic">Say hello</a>
+        <a href="assets/Ellison_Olivo_Resume.pdf" class="btn btn-ghost btn-lg magnetic" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+          Download Resume (PDF)
+        </a>
+      </div>
+
+      <div class="socials reveal">
+        <a href="https://github.com/Ellieboy112" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          <span class="mono">github.com/Ellieboy112</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <p>Designed &amp; built by Ellison Olivo · <span id="year">2026</span></p>
+    <p class="muted">Press <kbd>Ctrl</kbd> <kbd>K</kbd> to navigate</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" aria-label="Close">✕</button>
+    <img id="lb-img" alt="" />
+  </div>
+
+  <!-- Command palette -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette-backdrop" data-close></div>
+    <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command menu">
+      <div class="palette-input-row">
+        <span class="mono accent">&gt;</span>
+        <input id="palette-input" type="text" placeholder="Type a command or search..." autocomplete="off" aria-label="Search commands" />
+        <kbd>Esc</kbd>
+      </div>
+      <ul id="palette-list" role="listbox"></ul>
+    </div>
+  </div>
+
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
