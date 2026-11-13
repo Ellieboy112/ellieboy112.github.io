@@ -36,14 +36,23 @@ const PROJECTS = [
     role: "Developer · Capstone",
   },
 
-  // ----- Placeholders for upcoming projects (delete or replace these) -----
   {
-    title: "Next project",
-    tagline: "Currently in the works",
-    description: "A new app is being built. Check back soon, or reach out to hear what I'm working on.",
-    tags: ["Flutter", "Firebase"],
-    status: "coming-soon",
+    title: "Kuryente Tracker",
+    tagline: "Electric bill estimator & meter tracker",
+    description:
+      "Know your electric bill before it arrives. Estimates the monthly bill from your appliances, tracks real usage from meter readings, warns you before you go over budget, and gives savings tips in pesos. Uses PANELCO I rates; no sign-up, and data stays on your device.",
+    image: "https://ellieboy112.github.io/kuryente-tracker/screenshot.webp",
+    url: "https://ellieboy112.github.io/kuryente-tracker/",
+    caseStudy: "",
+    repo: "https://github.com/Ellieboy112/kuryente-tracker",
+    tags: ["React", "TypeScript", "Vite", "Vitest", "SVG charts"],
+    type: "Web App",
+    year: "2026",
+    status: "live",
+    role: "Solo project",
   },
+
+  // ----- Placeholders for upcoming projects (delete or replace these) -----
   {
     title: "Your idea here?",
     tagline: "Open to collaborations",
