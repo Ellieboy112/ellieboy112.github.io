@@ -40,7 +40,7 @@ const PROJECTS = [
     title: "Kuryente Tracker",
     tagline: "Electric bill estimator & meter tracker",
     description:
-      "Know your electric bill before it arrives. Estimates the monthly bill from your appliances, tracks real usage from meter readings, warns you before you go over budget, and gives savings tips in pesos. Uses PANELCO I rates; no sign-up, and data stays on your device.",
+      "Know your electric bill before it arrives. Estimates the monthly bill from your appliances, tracks real usage from meter readings, warns you before you go over budget, and gives savings tips in pesos. Includes rates for all 131 Philippine utilities, from Meralco to every electric cooperative. No sign-up, and data stays on your device.",
     image: "https://ellieboy112.github.io/kuryente-tracker/screenshot.webp",
     url: "https://ellieboy112.github.io/kuryente-tracker/",
     caseStudy: "",
